@@ -74,4 +74,7 @@ RUN echo "buildmakejobs 2" >> $CONF_PATH
 RUN echo "cxx_stdlib libstdc++" >> $CONF_PATH
 RUN echo "build_arch x86_64" >> $CONF_PATH
 
+# add symlink for gnumake
+RUN ln -s /usr/bin/make /usr/bin/gnumake
+
 ENV PATH="/opt/local/bin:$PATH"
