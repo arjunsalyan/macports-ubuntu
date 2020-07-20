@@ -71,7 +71,6 @@ ARG CONF_PATH=/opt/local/etc/macports/macports.conf
 # 2 because this image is mostly intended to run on VMs
 RUN echo "buildmakejobs 2" >> $CONF_PATH
 
-RUN echo "default_compilers clang" >> $CONF_PATH
 RUN echo "cxx_stdlib libstdc++" >> $CONF_PATH
 RUN echo "build_arch x86_64" >> $CONF_PATH
 
