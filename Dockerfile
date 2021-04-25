@@ -26,9 +26,9 @@ RUN apt-get update && \
 	tar && \
 	rm -rf /var/lib/apt/lists/*
 
-RUN curl -O https://distfiles.macports.org/MacPorts/MacPorts-2.6.2.tar.bz2
-RUN tar xf MacPorts-2.6.2.tar.bz2
-RUN cd MacPorts-2.6.2/ && \
+RUN curl -O https://distfiles.macports.org/MacPorts/MacPorts-2.6.4.tar.bz2
+RUN tar xf MacPorts-2.6.4.tar.bz2
+RUN cd MacPorts-2.6.4/ && \
 	./configure --with-objc-runtime=GNU --with-objc-foundation=GNU && \
 	make && \
 	make install
