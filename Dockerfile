@@ -27,9 +27,9 @@ RUN apt-get update && \
 	tar && \
 	rm -rf /var/lib/apt/lists/*
 
-RUN wget https://github.com/macports/macports-base/releases/download/v2.8.0/MacPorts-2.8.0.tar.bz2
-RUN tar xf MacPorts-2.8.0.tar.bz2
-RUN cd MacPorts-2.8.0/ && \
+RUN wget https://github.com/macports/macports-base/releases/download/v2.8.1/MacPorts-2.8.1.tar.bz2
+RUN tar xf MacPorts-2.8.1.tar.bz2
+RUN cd MacPorts-2.8.1/ && \
 	./configure --with-objc-runtime=GNU --with-objc-foundation=GNU && \
 	make && \
 	make install
@@ -63,7 +63,7 @@ RUN apt-get update && \
 	rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /opt/local /opt/local
-COPY --from=builder /MacPorts-2.8.0 /MacPorts-2.8.0
+COPY --from=builder /MacPorts-2.8.1 /MacPorts-2.8.1
 
 ARG CONF_PATH=/opt/local/etc/macports/macports.conf
 # Write some required defaults.
