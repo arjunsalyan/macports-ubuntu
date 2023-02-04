@@ -1,4 +1,4 @@
-FROM ubuntu:18.04 AS builder
+FROM ubuntu:20.04 AS builder
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
@@ -34,7 +34,7 @@ RUN cd MacPorts-2.8.0/ && \
 	make && \
 	make install
 
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
