@@ -1,4 +1,4 @@
-FROM ubuntu:22.04 AS builder
+FROM ubuntu:20.04 AS builder
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
@@ -37,6 +37,7 @@ RUN cd MacPorts-2.11.5/ && \
 
 FROM ubuntu:20.04
 
+RUN adduser --system --group --home /opt/local/var/macports/home macports
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
 	apt-get upgrade -y && \
