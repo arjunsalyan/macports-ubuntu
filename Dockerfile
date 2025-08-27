@@ -27,6 +27,7 @@ RUN apt-get update && \
 	tar && \
 	rm -rf /var/lib/apt/lists/*
 
+RUN adduser --system --group --home /opt/local/var/macports/home macports
 RUN wget https://github.com/macports/macports-base/releases/download/v2.11.5/MacPorts-2.11.5.tar.bz2
 RUN tar xf MacPorts-2.11.5.tar.bz2
 RUN cd MacPorts-2.11.5/ && \
